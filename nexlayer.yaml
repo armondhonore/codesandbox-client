@@ -1,0 +1,10 @@
+application:
+  name: codesandbox
+  pods:
+  - name: app
+    image: node:20-alpine
+    path: /
+    servicePorts:
+    - 3000
+    vars:
+      NODE_ENV: production
