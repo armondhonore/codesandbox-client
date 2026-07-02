@@ -2,9 +2,11 @@ application:
   name: codesandbox
   pods:
   - name: app
-    image: node:20-alpine
+    image: mirror.gcr.io/gitpod/openvscode-server:latest
     path: /
     servicePorts:
     - 3000
-    vars:
-      NODE_ENV: production
+    volumes:
+    - name: codesandbox-data
+      mountPath: /home/workspace
+      size: 10Gi
